@@ -1,0 +1,93 @@
+<!doctype html>
+<!-- This file is a static, GitHub Pages-safe prototype for the Research Lens portfolio case study. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A static portfolio prototype for source-grounded AI research briefs.">
+  <title>Research Lens — Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to the prototype workspace</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Research Lens home">Research <span>Lens</span></a>
+    <p>Portfolio prototype · Fictional content · No AI model connected</p>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">SOURCE-GROUNDED RESEARCH</p>
+        <h1 id="page-title">Start with evidence.<br>Then shape the story.</h1>
+        <p class="lede">A concept for turning a focused set of research notes into a reviewable draft—with sources and uncertainty in view.</p>
+      </div>
+      <aside class="notice" aria-label="Prototype boundary">
+        <strong>Demo boundary</strong>
+        <p>This is a static portfolio demonstration. The interaction below uses fictional, pre-written sample content and sends no data anywhere.</p>
+      </aside>
+    </section>
+
+    <section id="workspace" class="workspace" aria-label="Research brief workspace">
+      <section class="sources panel" aria-labelledby="sources-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">STEP 1</p>
+            <h2 id="sources-title">Source set</h2>
+          </div>
+          <span id="source-count" class="count">3 selected</span>
+        </div>
+        <p class="helper">The brief is limited to the sources you select.</p>
+        <div class="source-list">
+          <label class="source-card"><input type="checkbox" checked data-source="Interview study"><span><strong>Interview study</strong><small>8 PM interviews · May 2026</small></span></label>
+          <label class="source-card"><input type="checkbox" checked data-source="Survey summary"><span><strong>Survey summary</strong><small>42 responses · June 2026</small></span></label>
+          <label class="source-card"><input type="checkbox" checked data-source="Support themes"><span><strong>Support themes</strong><small>Q2 tagged tickets · Fictional</small></span></label>
+        </div>
+        <p class="privacy-note">No upload is available in this prototype. In a real product, source handling would require a separate privacy review.</p>
+      </section>
+
+      <section class="prompt panel" aria-labelledby="prompt-title">
+        <div class="panel-heading">
+          <div><p class="eyebrow">STEP 2</p><h2 id="prompt-title">Frame the question</h2></div>
+        </div>
+        <label for="research-question">What do you want to understand?</label>
+        <textarea id="research-question" rows="4">What makes research synthesis feel slow, and where could a cited draft help?</textarea>
+        <button id="generate-button" type="button">Generate a sample brief <span aria-hidden="true">→</span></button>
+        <p class="helper">This button reveals a pre-written example. It does not call an API.</p>
+      </section>
+
+      <section id="brief" class="brief panel" aria-labelledby="brief-title" aria-live="polite">
+        <div class="panel-heading">
+          <div><p class="eyebrow">STEP 3</p><h2 id="brief-title">Reviewable draft</h2></div>
+          <span class="draft-label">DRAFT — VERIFY BEFORE USE</span>
+        </div>
+        <div id="brief-empty" class="empty-state">
+          <p>Choose your source set and generate the fictional sample brief.</p>
+        </div>
+        <div id="brief-content" hidden>
+          <section>
+            <h3>Summary</h3>
+            <p class="question-context"><strong>Research focus:</strong> <span id="question-preview"></span></p>
+            <p id="summary-text">Researchers describe synthesis as slow when they must reconstruct the thread between scattered notes and the claims in a final brief.</p>
+          </section>
+          <section>
+            <h3>Evidence-backed themes</h3>
+            <ul id="themes-list"></ul>
+          </section>
+          <section class="open-questions">
+            <h3>Open questions</h3>
+            <p id="question-text">The selected sources suggest friction, but do not establish how much time a cited draft would save in a live workflow.</p>
+          </section>
+          <div class="brief-actions">
+            <button id="copy-button" class="secondary" type="button">Copy sample brief</button>
+            <span id="copy-status" role="status"></span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>Research Lens is a fictional Senior Product Manager portfolio case study. Read the repository README and the linked documentation for the product rationale.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
